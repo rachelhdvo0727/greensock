@@ -8,7 +8,9 @@ gsap.to(ball, {
   duration: 2
 });
 gsap.to(ball, {
-  transform: " translateX(400px) translateY(100px) rotateZ(200deg) scale(0)",
+  transform: " translateX(400px)",
+  scale: 0,
+  rotation: 200,
   duration: 2,
   delay: 1
 });
