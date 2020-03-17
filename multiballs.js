@@ -1,13 +1,26 @@
 "use strict";
 import { gsap } from "gsap";
 const balls = document.querySelectorAll(".ball");
+const timeline = gsap.timeline({ defaults: { duration: 2 } });
 
-gsap.to(balls, {
-  transform: "translateX(400px)",
-  duration: 2,
-  stagger: 0.2,
-  rotation: 360
-});
+timeline
+  .to(balls, {
+    transform: "translateX(400px)",
+    stagger: 0.2,
+    rotation: 360
+  })
+  .to(
+    balls,
+    {
+      ease: Bounce.easeInOut(1, 0.3),
+      x: 400,
+      y: -50,
+      duration: 0.5,
+      yoyo: true,
+      repeat: -1
+    },
+    "+=1" //delay
+  );
 
 // gsap.to(balls, {
 //   duration: 0.5,
@@ -17,18 +30,3 @@ gsap.to(balls, {
 //     ease: "power3.inOut"
 //   }
 // });
-gsap.to(balls, {
-  delay: 2,
-  duration: 2,
-  //   stagger: {
-  //     each: 0.2,
-  //     from: "random"
-  //   },
-  ease: Bounce.easeInOut(1, 0.3),
-  rotation: 360,
-  x: 400,
-  y: -50,
-  duration: 0.5,
-  yoyo: true,
-  repeat: -1
-});
