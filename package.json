@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel *.html --open"
+    "start": "parcel beachball.html --open"
   },
   "repository": {
     "type": "git",
